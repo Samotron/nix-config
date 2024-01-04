@@ -143,6 +143,8 @@ fi
 . \"$HOME/.cargo/env\"
 
 
+export PATH=\"~/.nix-profile/bin:\$PATH\"/
+
 eval \"$(starship init bash)\"
 
 
@@ -164,6 +166,9 @@ alias nrepl=\"clj -M:nREPL -m nrepl.cmdline\"
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
+
+  xdg.configFile."nvim".source = ./configs/nvim;
+  xdg.configFile."tmux".source = ./configs/tmux;
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
