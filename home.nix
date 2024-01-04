@@ -219,6 +219,13 @@ alias nrepl=\"clj -M:nREPL -m nrepl.cmdline\"
     pkgs.tmux
     pkgs.htop
     pkgs.starship
+    pkgs.ripgrep
+    pkgs.lazygit
+    pkgs.fd 
+    pkgs.fira-code-nerdfont
+    
+# Compilers
+    pkgs.gcc
 
 # Elixir Stuff
     pkgs.elixir_1_14
