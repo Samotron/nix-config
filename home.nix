@@ -130,6 +130,28 @@ if [ -f ~/.bash_aliases ]; then
 	. ~/.bash_aliases
 fi
 
+
+# if running bash
+if [ -n \"\$BASH_VERSION\" ]; then
+	# include .bashrc if it exists
+	if [ -f \"\$HOME/.bashrc\" ]; then
+		. \"\$HOME/.bashrc\"
+	fi
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d \"\$HOME/bin\" ]; then
+	PATH=\"\$HOME/bin:$PATH\"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d \"\$HOME/.local/bin\" ]; then
+	PATH=\"\$HOME/.local/bin:$PATH\"
+fi
+
+
+if [ -e /home/samotron/.nix-profile/etc/profile.d/nix.sh ]; then . /home/samotron/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
