@@ -91,6 +91,10 @@
 # Elixir Stuff
     pkgs.elixir_1_14
 
+# Rust Stuff
+    pkgs.rustc
+    pkgs.cargo
+
 # Clojure Stuff
     pkgs.clojure
     pkgs.babashka

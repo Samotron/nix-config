@@ -108,6 +108,11 @@ if [ -f ~/.bash_aliases ]; then
 	. ~/.bash_aliases
 fi
 
+# Functions to help with working on WSL
+wslcd() {
+	command cd "$(wslpath -u "$@")"
+}
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -118,16 +123,10 @@ if ! shopt -oq posix; then
 		. /etc/bash_completion
 	fi
 fi
-. "$HOME/.cargo/env"
-
-. "$HOME/.asdf/asdf.sh"
-. "$HOME/.asdf/completions/asdf.bash"
 
 eval "$(starship init bash)"
 
 # bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH=$BUN_INSTALL/bin:$PATH
 export PATH="$HOME/.nix-profile/bin:$PATH"
 
 # aliases
