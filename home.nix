@@ -39,6 +39,7 @@
         pg = "ping google.com -c 5";
         usage = "du -ch | grep total";
       };
+    profileExtra = builtins.readFile ./configs/bash/bash_profile;
   };
 
   # This value determines the Home Manager release that your configuration is
@@ -52,6 +53,7 @@
 
   xdg.configFile."nvim".source = ./configs/nvim;
   xdg.configFile."tmux".source = ./configs/tmux;
+
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -94,6 +96,15 @@
 # Rust Stuff
     pkgs.rustc
     pkgs.cargo
+
+# Zig Stuff
+    pkgs.zig
+
+# Go Stuff
+    pkgs.go 
+    pkgs.cobra-cli
+    pkgs.gopls
+
 
 # Clojure Stuff
     pkgs.clojure
