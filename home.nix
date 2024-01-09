@@ -36,6 +36,7 @@
         gs = "git status";
         gt = "git tag";
         ls = "ls -a";
+        hms = "home-manager switch";
         pg = "ping google.com -c 5";
         usage = "du -ch | grep total";
       };
@@ -86,6 +87,7 @@
     pkgs.lazygit
     pkgs.fd 
     pkgs.fira-code-nerdfont
+    pkgs.tree-sitter
     
 # Compilers
     pkgs.gcc
@@ -111,7 +113,7 @@
     pkgs.babashka
 
 # Javascript Stuff
-
+    pkgs.nodejs_21
     pkgs.bun
     
     
