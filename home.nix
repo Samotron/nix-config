@@ -5,6 +5,7 @@
   # manage.
   home.username = "samotron";
   home.homeDirectory = "/home/samotron";
+  #imports = [./configs/nix/i3.nix];
   programs.git = {
       enable = true;
       aliases = {
