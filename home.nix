@@ -79,7 +79,6 @@
 
 # Development tools
     pkgs.bash
-    pkgs.neovim
     pkgs.tmux
     pkgs.htop
     pkgs.starship
@@ -88,6 +87,7 @@
     pkgs.fd 
     pkgs.fira-code-nerdfont
     pkgs.tree-sitter
+    pkgs.gnumake
     
 # Compilers
     pkgs.gcc
