@@ -8,12 +8,17 @@
   #imports = [./configs/nix/i3.nix];
   programs.git = {
       enable = true;
+      userName = "Sam";
+      userEmail = "james.s.rogers23@gmail.com";
       aliases = {
         prettylog = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(r) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
       };
       extraConfig = {
         color.ui = true;
         init.defaultBranch = "main";
+        push = {
+            autoSetupRemote = true;
+          };
       };
     };
   programs.neovim = {
@@ -89,6 +94,7 @@
     pkgs.fira-code-nerdfont
     pkgs.tree-sitter
     pkgs.gnumake
+    pkgs.gh
     
 # Compilers
     pkgs.gcc
