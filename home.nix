@@ -1,7 +1,7 @@
 { config, pkgs, lib,  ... }:
 
 let
-  
+ #Installing binaries like this espanso example https://github.com/knl/dotskel/blob/cd81cf92383049f8bb2d719369ce72b78c11b072/home.nix#L40 
   viktor_cli = let
     app = "viktor-cli";
     version = "0.33.1";
