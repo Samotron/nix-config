@@ -1,6 +1,36 @@
 { config, pkgs, lib,  ... }:
 
-{
+let
+  
+  viktor_cli = let
+    app = "viktor-cli";
+    version = "0.33.1";
+    sources = pkgs.fetchurl {
+ url = "https://developers.viktor.ai/api/v1/get-cli/?platform=linux&format=binary";
+      sha256 = "h4YUi5r7JN6Leey8hE5+F+KnaYI1um/8OAZGJrVse5s=";
+    };
+
+  in 
+  pkgs.stdenvNoCC.mkDerivation rec {
+      pname = "viktor-cli";
+      inherit version;
+
+      src = sources;
+      phases = ["installPhase"];
+
+      installPhase = ''
+      mkdir -p "$out/bin"
+      cp $src $out/bin/viktor-cli
+      chmod +x $out/bin/viktor-cli
+      '';
+
+      meta = {
+        description = "Tools for workking with Viktor";
+        homepage = "https://viktor.ai";
+        };
+    };
+in 
+rec {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "samotron";
@@ -60,6 +90,7 @@
 
   xdg.configFile."nvim".source = ./configs/nvim;
   xdg.configFile."tmux".source = ./configs/tmux;
+  
 
 
   # The home.packages option allows you to install Nix packages into your
@@ -123,7 +154,18 @@
     pkgs.nodejs_21
     pkgs.bun
 
+# Python Stuff
+    pkgs.python311
+    pkgs.poetry
+    viktor_cli
+
+
+
 # Things for none WSL 
+#
+#
+
+  
  
     
     
