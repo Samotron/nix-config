@@ -157,7 +157,8 @@ rec {
 # Python Stuff
     pkgs.python311
     pkgs.poetry
-    viktor_cli
+    pkgs.black
+    viktor_cli # installed from above
 
 
 
