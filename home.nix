@@ -126,6 +126,7 @@ rec {
     pkgs.tree-sitter
     pkgs.gnumake
     pkgs.gh
+    pkgs.pandoc
     
 # Compilers
     pkgs.gcc
