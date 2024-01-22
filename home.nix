@@ -36,7 +36,6 @@ rec {
   home.username = "samotron";
   home.homeDirectory = "/home/samotron";
 
-  services.lorri.enable = true;
   #imports = [./configs/nix/i3.nix];
   programs.git = {
       enable = true;
@@ -80,6 +79,12 @@ rec {
       };
     profileExtra = builtins.readFile ./configs/bash/bash_profile;
   };
+
+  programs.direnv = {
+      enable = true;
+      enableBashIntegration = true;
+      nix-direnv.enable = true;
+    };
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -129,7 +134,6 @@ rec {
     pkgs.gnumake
     pkgs.gh
     pkgs.pandoc
-    pkgs.direnv
     
 # Compilers
     pkgs.gcc
