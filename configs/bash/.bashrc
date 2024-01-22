@@ -140,4 +140,5 @@ export PATH="$HOME/Projects/sam/bin:$PATH"
 # aliases
 alias nrepl="clj -M:nREPL -m nrepl.cmdline"
 
+eval "$(direnv-hook bash)"
 eval "$(starship init bash)"

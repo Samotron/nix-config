@@ -35,6 +35,8 @@ rec {
   # manage.
   home.username = "samotron";
   home.homeDirectory = "/home/samotron";
+
+  services.lorri.enable = true;
   #imports = [./configs/nix/i3.nix];
   programs.git = {
       enable = true;
@@ -127,6 +129,7 @@ rec {
     pkgs.gnumake
     pkgs.gh
     pkgs.pandoc
+    pkgs.direnv
     
 # Compilers
     pkgs.gcc
@@ -137,6 +140,7 @@ rec {
 # Rust Stuff
     pkgs.rustc
     pkgs.cargo
+    pkgs.rust-analyzer
 
 # Zig Stuff
     pkgs.zig
@@ -159,6 +163,7 @@ rec {
     pkgs.python311
     pkgs.poetry
     pkgs.black
+    pkgs.mkdocs
     viktor_cli # installed from above
 
 
