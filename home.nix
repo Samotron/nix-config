@@ -39,8 +39,24 @@ rec {
   #imports = [./configs/nix/i3.nix];
   programs.git = {
       enable = true;
-      userName = "Sam";
-      userEmail = "james.s.rogers23@gmail.com";
+      includes = [
+      {
+# personal
+          condition = "gitdir:~/Dev/";
+          contents.user = {
+              email = "james.s.rogers23@gmail.com";
+              name = "Sam";
+            };
+        }
+      {
+#Work
+          condition = "gitdir:~/Projects/";
+          contents.user = {
+              email = "sam.rogers@atkinsrealis.com";
+              name = "Sam Rogers";
+            };
+        }
+      ];
       aliases = {
         prettylog = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(r) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
       };
@@ -134,6 +150,8 @@ rec {
     pkgs.gnumake
     pkgs.gh
     pkgs.pandoc
+    pkgs.zsh
+    pkgs.xclip
     
 # Compilers
     pkgs.gcc
