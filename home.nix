@@ -158,6 +158,7 @@ rec {
 
 # Elixir Stuff
     pkgs.elixir_1_14
+    pkgs.gleam
 
 # Rust Stuff
     pkgs.rustc
