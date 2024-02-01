@@ -1,4 +1,4 @@
-return {
+--[[return {
   {
     "nvim-treesitter/nvim-treesitter",
     config = function(_, opts)
@@ -14,7 +14,7 @@ return {
       }
     end,
   },
-  {
+{
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
@@ -22,4 +22,5 @@ return {
       },
     },
   },
-}
+}]]
+--
