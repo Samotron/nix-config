@@ -154,6 +154,8 @@ rec {
     pkgs.xclip
     pkgs.azure-functions-core-tools
     pkgs.asciinema
+    pkgs.asciinema-agg
+
     
 # Compilers
     pkgs.gcc
