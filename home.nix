@@ -152,6 +152,8 @@ rec {
     pkgs.pandoc
     pkgs.zsh
     pkgs.xclip
+    pkgs.azure-functions-core-tools
+    pkgs.asciinema
     
 # Compilers
     pkgs.gcc
@@ -179,7 +181,7 @@ rec {
     pkgs.babashka
 
 # Javascript Stuff
-    pkgs.nodejs_21
+    pkgs.nodejs_20
     pkgs.bun
 
 # Python Stuff
