@@ -155,6 +155,7 @@ rec {
     pkgs.azure-functions-core-tools
     pkgs.asciinema
     pkgs.asciinema-agg
+    pkgs.hledger
 
     
 # Compilers
