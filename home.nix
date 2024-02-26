@@ -1,4 +1,4 @@
-{ config, pkgs, lib,  ... }:
+{ config, pkgs, lib, ... }:
 
 let
  #Installing binaries like this espanso example https://github.com/knl/dotskel/blob/cd81cf92383049f8bb2d719369ce72b78c11b072/home.nix#L40 
@@ -29,6 +29,10 @@ let
         homepage = "https://viktor.ai";
         };
     };
+    wslCheck = 
+      lib.strings.hasInfix "LGB" (builtins.readFile "/etc/hostname");
+
+
 in 
 rec {
   # Home Manager needs a bit of information about you and the paths it should
@@ -156,6 +160,7 @@ rec {
     pkgs.asciinema
     pkgs.asciinema-agg
     pkgs.hledger
+    pkgs.neofetch
 
     
 # Compilers
@@ -181,7 +186,9 @@ rec {
 
 # Clojure Stuff
     pkgs.clojure
+    pkgs.clojure-lsp
     pkgs.babashka
+    pkgs.leiningen
 
 # Javascript Stuff
     pkgs.nodejs_20
@@ -200,11 +207,14 @@ rec {
 #
 #
 
+
   
  
     
     
-  ];
+  ] ++ (lib.optionals (!wslCheck) [
+  pkgs.qgis
+  ]); 
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
