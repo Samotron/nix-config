@@ -100,6 +100,30 @@ rec {
     profileExtra = builtins.readFile ./configs/bash/bash_profile;
   };
 
+  programs.zsh = {
+      enable = true;
+      initExtra = builtins.readFile ./configs/bash/.zshrc;
+    shellAliases = {
+        ga = "git add .";
+        gc = "git commit -m";
+        gp = "git push";
+        gs = "git status";
+        gt = "git tag";
+        ls = "ls -a";
+        hms = "home-manager switch";
+        pg = "ping google.com -c 5";
+        usage = "du -ch | grep total";
+      };
+      oh-my-zsh = {
+          enable = true;
+          plugins = ["git"];
+          theme = "fino-time";
+        };
+      history.size = 10000;
+      history.path = "${config.xdg.dataHome}/zsh/history";
+
+    };
+
   programs.direnv = {
       enable = true;
       enableBashIntegration = true;
