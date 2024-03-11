@@ -113,6 +113,9 @@ rec {
         hms = "home-manager switch";
         pg = "ping google.com -c 5";
         usage = "du -ch | grep total";
+        foldersize = "du -h --max-depth=1 | sort -r -h";
+        home-manager-gc = "home-manager expire-generations '-1 days'";
+
       };
       oh-my-zsh = {
           enable = true;
