@@ -190,35 +190,13 @@ rec {
     pkgs.neofetch
 
     
-# Compilers
-    pkgs.gcc
 
 # Elixir Stuff
     pkgs.elixir_1_14
+    pkgs.erlang
     pkgs.gleam
 
-# Rust Stuff
-    pkgs.rustc
-    pkgs.cargo
-    pkgs.rust-analyzer
 
-# Zig Stuff
-    pkgs.zig
-
-# Go Stuff
-    pkgs.go 
-    pkgs.cobra-cli
-    pkgs.gopls
-
-
-# Clojure Stuff
-    pkgs.clojure
-    pkgs.clojure-lsp
-    pkgs.babashka
-    pkgs.leiningen
-
-# Javascript Stuff
-    pkgs.nodejs_20
     pkgs.bun
 
 # Python Stuff
