@@ -188,7 +188,7 @@ rec {
     pkgs.asciinema-agg
     pkgs.hledger
     pkgs.neofetch
-    pkgs.zig
+    pkgs.zigpkgs.master
 
 # Elixir Stuff
     pkgs.elixir_1_14

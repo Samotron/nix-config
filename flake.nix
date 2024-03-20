@@ -22,7 +22,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
       overlays = [
       inputs.neovim-nightly-overlay.overlay
-      (final: prev: rec {zigpkgs = zig-overlay.packages.${prev.system};})
+      (final: prev: {zigpkgs = zig-overlay.packages.${prev.system};})
       ];
     in {
       homeConfigurations."samotron" = home-manager.lib.homeManagerConfiguration {
