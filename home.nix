@@ -188,8 +188,7 @@ rec {
     pkgs.asciinema-agg
     pkgs.hledger
     pkgs.neofetch
-
-    
+    pkgs.zig
 
 # Elixir Stuff
     pkgs.elixir_1_14
@@ -204,7 +203,7 @@ rec {
     pkgs.poetry
     pkgs.black
     pkgs.mkdocs
-    viktor_cli # installed from above
+    #viktor_cli # installed from above
 
 
 
