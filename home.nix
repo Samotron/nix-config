@@ -7,7 +7,7 @@ let
     version = "0.33.1";
     sources = pkgs.fetchurl {
  url = "https://developers.viktor.ai/api/v1/get-cli/?platform=linux&format=binary";
-      sha256 = "h4YUi5r7JN6Leey8hE5+F+KnaYI1um/8OAZGJrVse5s=";
+      sha256 = "EkGixvOEu61ByZSdgoEPKbv9TNn+Dyj9wQJ+CJQfmlU=";
     };
 
   in 
@@ -189,6 +189,7 @@ rec {
     pkgs.hledger
     pkgs.neofetch
     pkgs.zigpkgs.master
+    viktor_cli
 
 # Elixir Stuff
     pkgs.elixir_1_14
