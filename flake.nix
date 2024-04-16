@@ -20,6 +20,7 @@
       overlays = [
       inputs.neovim-nightly-overlay.overlay
       (final: prev: {zigpkgs = zig-overlay.packages.${prev.system};})
+    (import (builtins.fetchTarball "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz"))
       ];
 
   in {

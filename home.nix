@@ -191,6 +191,7 @@ rec {
     pkgs.asciinema-agg
     pkgs.hledger
     pkgs.neofetch
+    pkgs.emacsGcc
     #pkgs.zigpkgs.master
     viktor_cli
     pkgs.zig
@@ -203,6 +204,7 @@ rec {
 
 
     pkgs.bun
+    pkgs.go
 
 # Python Stuff
     pkgs.python311
