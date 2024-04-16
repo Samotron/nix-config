@@ -205,6 +205,7 @@ rec {
 
     pkgs.bun
     pkgs.go
+    pkgs.gopls
 
 # Python Stuff
     pkgs.python311
