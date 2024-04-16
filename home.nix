@@ -7,7 +7,7 @@ let
     version = "0.33.1";
     sources = pkgs.fetchurl {
  url = "https://developers.viktor.ai/api/v1/get-cli/?platform=linux&format=binary";
-      sha256 = "EkGixvOEu61ByZSdgoEPKbv9TNn+Dyj9wQJ+CJQfmlU=";
+      sha256 = "aWvxiZ+vw42xNbiBj/6OwpscRP/AU42VXV3/37k5tCs=";
     };
 
   in 
@@ -144,6 +144,9 @@ rec {
 
   xdg.configFile."nvim".source = ./configs/nvim;
   xdg.configFile."tmux".source = ./configs/tmux;
+
+  home.username = "samotron";
+  home.homeDirectory = "/home/samotron/";
   
 
 
