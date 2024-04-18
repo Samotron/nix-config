@@ -37,7 +37,16 @@ in
 rec {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-
+  programs.vscode = {
+      enable = true;
+      package = pkgs.vscode.fhs;
+      extensions = (
+          with pkgs.vscode-extensions; [
+          vscodevim.vim
+          golang.go
+          ]
+        );
+    };
   #imports = [./configs/nix/i3.nix];
   programs.git = {
       enable = true;
@@ -191,7 +200,6 @@ rec {
     pkgs.asciinema-agg
     pkgs.hledger
     pkgs.neofetch
-    pkgs.emacsGcc
     #pkgs.zigpkgs.master
     viktor_cli
     pkgs.zig
@@ -206,6 +214,7 @@ rec {
     pkgs.bun
     pkgs.go
     pkgs.gopls
+    pkgs.wails
 
 # Python Stuff
     pkgs.python311
@@ -227,6 +236,7 @@ rec {
     
   ] ++ (lib.optionals (!wslCheck) [
   pkgs.qgis
+
   ]); 
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
