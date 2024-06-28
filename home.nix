@@ -119,6 +119,7 @@ rec {
         gt = "git tag";
         ls = "ls -a";
         hms = "home-manager switch";
+        sudo = "sudo --preserve-env=PATH env ";
 	nos = "sudo nixos-rebuild switch --impure --flake /etc/nixos/#samotron-nixos";
         pg = "ping google.com -c 5";
         usage = "du -ch | grep total";
@@ -182,6 +183,7 @@ rec {
 
 # Development tools
     pkgs.bash
+    pkgs.terraform
     pkgs.tmux
     pkgs.htop
     pkgs.starship
@@ -200,9 +202,8 @@ rec {
     pkgs.asciinema-agg
     pkgs.hledger
     pkgs.neofetch
-    #pkgs.zigpkgs.master
+    pkgs.zigpkgs."0.12.0"
     viktor_cli
-    pkgs.zig
     pkgs.openssl
 
 # Elixir Stuff
@@ -210,18 +211,25 @@ rec {
     pkgs.erlang
     pkgs.gleam
 
+# Haskell
+    pkgs.ghc
+    pkgs.haskellPackages.hoogle 
+    pkgs.cabal-install
+    
 
     pkgs.bun
     pkgs.go
     pkgs.gopls
     pkgs.wails
+    pkgs.nodejs_22
 
 # Python Stuff
     pkgs.python311
-    pkgs.poetry
     pkgs.black
     pkgs.mkdocs
     #viktor_cli # installed from above
+    #
+    pkgs.jetbrains.rust-rover
 
 
 
@@ -235,7 +243,6 @@ rec {
     
     
   ] ++ (lib.optionals (!wslCheck) [
-  pkgs.qgis
 
   ]); 
 
